@@ -7,6 +7,10 @@ module Api
       # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
       devise :database_authenticatable, :registerable, :validatable, :jwt_authenticatable, 
              jwt_revocation_strategy: Api::V1::JwtDenylist
+
+
+      validates :first_name, presence: {message: 'First Name required'}
+      validates :last_name, presence: {message: 'Last Name required'}
     end
   end
 end

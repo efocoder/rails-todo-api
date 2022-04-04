@@ -53,7 +53,7 @@ module Api
 
         def register_success
           render json: create_response(200, 'Signed up successfully', serialize_data(Api::V1::UserSerializer, resource)),
-                 status: :ok
+                 status: :created
         end
 
         def register_failed(resource)
