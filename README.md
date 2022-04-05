@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple REST API developed with Ruby on Rails 6.
 
-Things you may want to cover:
+To get the application running on your computer.
 
-* Ruby version
+* Ruby version 3.0.3
+* Rails version 6.1.5
+* sqlite3
 
-* System dependencies
+### Up and running
 
-* Configuration
+```bash
+   $ git clone git@github.com:efocoder/rails-todo-api.git
+   
+   $ bundle install
+   
+   $ rails db:migrate
+   
+   $ rails server
+```
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
