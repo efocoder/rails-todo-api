@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_03_154808) do
+ActiveRecord::Schema.define(version: 2022_04_04_144200) do
 
   create_table "api_v1_jwt_denylist", force: :cascade do |t|
     t.string "jti", null: false
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2022_04_03_154808) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["jti"], name: "index_api_v1_jwt_denylist_on_jti"
+  end
+
+  create_table "api_v1_todos", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "description"
+    t.string "status", default: "NEW", null: false
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "api_v1_users", force: :cascade do |t|

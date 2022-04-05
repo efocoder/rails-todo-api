@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module ApiHelpers
-  def json_body
+  def json_body(response)
     JSON.parse(response.body)
   end
 
-  def auth_header(account)
+  def auth_header(user)
     Devise::JWT::TestHelpers.auth_headers(valid_headers, user)
   end
 end

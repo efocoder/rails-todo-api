@@ -9,7 +9,7 @@ class AuthFailure < Devise::FailureApp
 
   def http_auth
     self.status = 401
-    self.headers['WWW-Authenticate'] = %(Bearer realm=#{Devise.http_authentication_realm.inspect}) if http_auth_header?
+    headers['WWW-Authenticate'] = %(Bearer realm=#{Devise.http_authentication_realm.inspect}) if http_auth_header?
     self.content_type = 'json'
     self.response_body = http_auth_body
   end

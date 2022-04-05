@@ -14,13 +14,11 @@ RSpec.describe Api::V1::User, type: :request do
     context 'Login' do
       it 'does not login user' do
         post user_session_url, params: { user: invalid_credentials }, as: :json
-        puts response.body
         expect(response).to have_http_status(:unauthorized)
       end
 
       it 'does  login user' do
         post user_session_url, params: { user: valid_credentials }, as: :json
-        puts response.body
         expect(response).to have_http_status(:ok)
       end
     end

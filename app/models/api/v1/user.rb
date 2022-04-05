@@ -11,6 +11,8 @@ module Api
 
       validates :first_name, presence: {message: 'First Name required'}
       validates :last_name, presence: {message: 'Last Name required'}
+
+      has_many :todos, class_name: 'Api::V1::Todo'
     end
   end
 end

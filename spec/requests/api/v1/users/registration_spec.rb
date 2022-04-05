@@ -18,7 +18,6 @@ RSpec.describe Api::V1::User, type: :request do
 
       it 'does create user' do
         post user_registration_url, params: { user: valid_attributes }
-        puts response.body
         expect(response).to have_http_status(:created)
         expect { response }.to change(Api::V1::User, :count).by_at_most(1)
       end

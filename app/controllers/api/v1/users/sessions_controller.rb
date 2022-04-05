@@ -27,11 +27,12 @@ module Api
         protected
 
         def respond_with(resource, _opts = {})
-          if user_signed_in?
-            data = serialize_data(Api::V1::UserSerializer, resource)
-            data.first['token'] = request.env['warden-jwt_auth.token']
-            render json: create_response(200, 'Signed in successfully', data), status: :ok
-          end
+          return unless user_signed_in?
+
+          data = serialize_data(Api::V1::UserSerializer, resource)
+          data.first['token'] = request.env['warden-jwt_auth.token']
+          render json: create_response(200, 'Signed in successfully', data), status: :ok
+
         end
 
         def respond_to_on_destroy
