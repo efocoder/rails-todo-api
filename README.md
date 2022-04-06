@@ -10,6 +10,11 @@ To get the application running on your computer.
 
 ### Up and running
 
+```bash
+   $ git clone git@github.com:efocoder/rails-todo-api.git
+   
+   $ bundle install
+```
 * Set the secret for JWT
 ```bash
     $ rake secret
@@ -18,20 +23,17 @@ To get the application running on your computer.
 ```bash 
     $ EDITOR=nano rails credentials:edit
 ```
-* update the credentials with the secret you copied 
+* update the credentials with the secret you copied
 
 * devise:
-    jwt_secret: 'secret here'
+  jwt_secret: 'secret here'
 
 ### Get running
+
 ```bash
-   $ git clone git@github.com:efocoder/rails-todo-api.git
-   
-   $ bundle install
-   
-   $ rails db:migrate
-   
-   $ rails server
+    $ rails db:migrate
+    
+    $ rails server
 ```
 
 
