@@ -8,7 +8,10 @@ To get the application running on your computer.
 * Rails version 6.1.5
 * sqlite3
 
+## NB: Every request needs a Bearer token except sign up and login.
+
 ### Up and running
+
 
 ```bash
    $ git clone git@github.com:efocoder/rails-todo-api.git
