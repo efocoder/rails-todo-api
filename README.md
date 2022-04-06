@@ -19,5 +19,17 @@ To get the application running on your computer.
    
    $ rails server
 ```
+* Set the secret for JWT
+```bash
+    $ rake secret
+```
+* copy the secret to and update the credentials.
+```bash 
+    $ EDITOR=nano rails credentials:edit
+```
+* update the credentials with the secret you copied 
+
+* devise:
+    jwt_secret: 'secret here'
 
 
